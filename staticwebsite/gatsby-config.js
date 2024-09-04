@@ -1,11 +1,11 @@
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
   siteMetadata: {
-    title: `My Gatsby Site`,
-    description: `A minimal Gatsby site with React.`,
-    author: `@yourhandle`,
+    title: `Boilerplate`,
+    description: `boilerplate`,
+    author: `@yourusername`,
+    siteUrl: `https://www.yourdomain.com/`,
   },
-  plugins: [],
+  plugins: [
+    `gatsby-plugin-styled-components`,
+  ],
 }

@@ -154,3 +154,26 @@ hr {
 .main-content {
   padding: var(--space-lg) 0;
 }
+
+/* Layout Styles */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-footer {
+  margin-top: auto;
+  padding: 1rem;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.layout-footer a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+.layout-footer a:hover {
+  text-decoration: underline;
+}

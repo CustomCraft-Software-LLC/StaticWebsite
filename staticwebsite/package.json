@@ -6,8 +6,10 @@
   "author": "Your Name <your.email@example.com>",
   "dependencies": {
     "gatsby": "^5.13.7",
+    "gatsby-plugin-styled-components": "^6.13.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "prettier": "^2.8.8"

@@ -1,36 +1,28 @@
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Header from "./header"
-import "./layout.css"
+import React from 'react';
+import styled from 'styled-components';
+import GlobalStyle from '../styles/GlobalStyle';
+import Header from './Header';
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const Main = styled.main`
+  padding: var(--space-lg) 0;
+`;
 
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+const Footer = styled.footer`
+  background: var(--color-secondary);
+  padding: var(--space-lg);
+  text-align: center;
+  color: var(--color-text);
+`;
 
-  return (
-    <>
-      <Header siteTitle={siteTitle} />
-      <div className="layout-container">
-        <main>{children}</main>
-        <footer className="layout-footer">
-          <p>© {new Date().getFullYear()} &middot; Built with {` `}
-            <a href="https://www.customcraftsoftware.com" target="_blank" rel="noopener noreferrer">
-              CustomCraft Software, LLC
-            </a>
-          </p>
-        </footer>
-      </div>
-    </>
-  )
-}
+const Layout = ({ children }) => (
+  <>
+    <GlobalStyle />
+    <Header siteTitle="My Gatsby Site" />
+    <Main>{children}</Main>
+    <Footer>
+      © {new Date().getFullYear()} Built with Gatsby
+    </Footer>
+  </>
+);
 
-export default Layout
+export default Layout;

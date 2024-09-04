@@ -1,11 +1,11 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 
 const IndexPage = () => (
   <Layout>
-    
+
   </Layout>
 )
 
