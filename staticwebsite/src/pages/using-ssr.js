@@ -1,32 +1,18 @@
 import * as React from "react"
 import { Link } from "gatsby"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const UsingSSR = ({ serverData }) => {
   return (
     <Layout>
-      <h1>
-        This page is <b>rendered server-side</b>
-      </h1>
-      <p>
-        This page is rendered server side every time the page is requested.
-        Reload it to see a(nother) random photo from{" "}
-        <code>dog.ceo/api/breed/shiba/images/random</code>:
-      </p>
-      <img
-        style={{ width: "320px", borderRadius: "var(--border-radius)" }}
-        alt="A random dog"
-        src={serverData.message}
-      />
-      <p>
-        To learn more, head over to our{" "}
-        <a href="https://www.gatsbyjs.com/docs/reference/rendering-options/server-side-rendering/">
-          documentation about Server Side Rendering
-        </a>
-        .
-      </p>
+      <h1>Server-side Rendered Page</h1>
+      <p>Here is a random image of a Shiba Inu:</p>
+      {serverData.message ? (
+        <img src={serverData.message} alt="A random Shiba Inu" style={{ maxWidth: "300px", borderRadius: "8px" }} />
+      ) : (
+        <p>No image available.</p>
+      )}
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
@@ -42,14 +28,17 @@ export async function getServerData() {
     if (!res.ok) {
       throw new Error(`Response failed`)
     }
+    const data = await res.json()
     return {
-      props: await res.json(),
+      props: data, // Assuming the API returns the image in a `message` property
     }
   } catch (error) {
     return {
       status: 500,
       headers: {},
-      props: {},
+      props: {
+        error: error.message, // Adding error message for debugging purposes
+      },
     }
   }
 }

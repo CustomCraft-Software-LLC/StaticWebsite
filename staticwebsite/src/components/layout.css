@@ -1,224 +1,156 @@
 :root {
-  --border-radius: 4px;
-  --color-text: #333;
+  /* Color Palette */
   --color-primary: #7026b9;
-  --color-code-bg: #fff4db;
-  --color-code: #8a6534;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-  --font-lg: 18px;
-  --font-md: 16px;
-  --font-sm: 14px;
-  --font-sx: 12px;
-  --line-height-loose: 1.75;
+  --color-secondary: #f4f4f4;
+  --color-text: #333333;
+  --color-background: #ffffff;
+  --color-link: #7026b9;
+  --color-link-hover: #5a1e8f;
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Font Sizes */
+  --font-size-base: 16px;
+  --font-size-large: 18px;
+  --font-size-small: 14px;
+
+  /* Line Heights */
   --line-height-normal: 1.5;
-  --line-height-dense: 1.1;
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 16px;
-  --space-4: 24px;
-  --space-5: 32px;
-  --space-6: 64px;
-  --size-content: 54rem;
-  --size-gutter: var(--space-5);
-  --size-gap: var(--space-6);
+  --line-height-tight: 1.25;
+  --line-height-loose: 1.75;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+
+  /* Borders */
+  --border-radius: 4px;
+  --border-color: #dddddd;
 }
-html {
-  -webkit-text-size-adjust: 100%;
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  font: sans-serif;
-  font-size: var(--font-md);
-  line-height: var(--line-height-normal);
-  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
 }
-body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  color: var(--color-text);
-  font-family: sans-serif;
+
+html {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
   font-family: var(--font-sans);
-  font-weight: normal;
-  margin: 0;
-  word-wrap: break-word;
+  color: var(--color-text);
+  background-color: var(--color-background);
 }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 a {
-  background-color: transparent;
-  color: var(--color-primary);
+  color: var(--color-link);
   text-decoration: none;
-  font-weight: 500;
-  text-decoration: underline;
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 2px;
+  transition: color 0.2s ease-in-out;
 }
-a:active,
-a:hover {
-  outline-width: 0;
-  text-decoration: none;
+
+a:hover,
+a:focus {
+  color: var(--color-link-hover);
 }
-abbr[title] {
-  border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
-  cursor: help;
-  text-decoration: none;
-}
-b,
-strong {
-  font-weight: inherit;
-  font-weight: bolder;
-}
-dfn {
-  font-style: italic;
-}
-h1 {
-  margin: 0;
-  margin-bottom: 3rem;
-  padding: 0;
-  line-height: var(--line-height-dense);
-  letter-spacing: -0.01em;
-}
-h1 > b {
-  color: var(--color-primary);
-}
-img {
-  border-style: none;
-  max-width: 100%;
-}
-code,
-kbd,
-pre,
-samp {
-  font-family: var(--font-mono);
-  font-size: 1em;
-  line-height: inherit;
-}
-hr {
-  box-sizing: content-box;
-  overflow: visible;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding: 0;
-  margin-bottom: calc(var(--space-4) - 1px);
-  background: hsla(0, 0%, 0%, 0.2);
-  border: none;
-  height: 1px;
-}
-* {
-  box-sizing: inherit;
-}
-*:before {
-  box-sizing: inherit;
-}
-*:after {
-  box-sizing: inherit;
-}
-hgroup,
-img,
-figure,
-fieldset,
-ul,
-ol,
-dl,
-dd,
-p {
-  margin: 0;
-  padding: 0;
-  margin-bottom: var(--space-4);
-}
-ul,
-ol {
-  margin-left: var(--space-4);
-  list-style-position: outside;
-  list-style-image: none;
-}
-pre {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  margin-bottom: var(--space-4);
-  font-size: 0.875rem;
-  line-height: var(--line-height-normal);
-  background: hsla(0, 0%, 0%, 0.04);
-  border-radius: var(--border-radius);
-  overflow: auto;
-  word-wrap: normal;
-  padding: var(--space-4);
-}
-b,
-strong,
-dt,
-th {
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-md);
   font-weight: bold;
 }
-li {
-  margin-bottom: calc(var(--space-4) / 2);
+
+h1 {
+  font-size: 2rem;
 }
-ol li,
-ul li {
-  padding-left: 0;
+
+h2 {
+  font-size: 1.75rem;
 }
-li > ol,
-li > ul {
-  margin-bottom: calc(var(--space-4) / 2);
-  margin-left: var(--space-4);
-  margin-top: calc(var(--space-4) / 2);
+
+h3 {
+  font-size: 1.5rem;
 }
-blockquote *:last-child {
-  margin-bottom: 0;
+
+h4 {
+  font-size: 1.25rem;
 }
-li *:last-child {
-  margin-bottom: 0;
+
+h5 {
+  font-size: 1rem;
 }
-p *:last-child {
-  margin-bottom: 0;
+
+h6 {
+  font-size: 0.875rem;
 }
-li > p {
-  margin-bottom: calc(var(--space-4) / 2);
-}
+
 p {
-  max-width: 680px;
+  margin-bottom: var(--space-md);
 }
-code {
-  font-size: 0.875rem;
+
+ul, ol {
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-lg);
 }
-kbd {
-  font-size: 0.875rem;
+
+li {
+  margin-bottom: var(--space-sm);
 }
-samp {
-  font-size: 0.875rem;
-}
-abbr {
-  border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
-  cursor: help;
-}
-acronym {
-  border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
-  cursor: help;
-}
-tt,
-code {
-  background-color: var(--color-code-bg);
-  border-radius: var(--border-radius);
-  color: var(--color-code);
+
+code, pre {
   font-family: var(--font-mono);
-  padding-bottom: 0.25em;
-  padding-top: 0.25em;
-  word-break: normal;
+  background-color: var(--color-secondary);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius);
 }
-pre code {
-  background: none;
+
+pre {
+  overflow-x: auto;
 }
-code:before,
-code:after,
-tt:before,
-tt:after {
-  content: "\00a0";
-  letter-spacing: -0.2em;
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
 }
-pre code:before,
-pre code:after,
-pre tt:before,
-pre tt:after {
-  content: none;
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: var(--space-lg) 0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.header,
+.footer {
+  padding: var(--space-lg) 0;
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.header a,
+.footer a {
+  color: #fff;
+}
+
+.main-content {
+  padding: var(--space-lg) 0;
 }
