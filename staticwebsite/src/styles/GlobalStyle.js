@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     --color-link-hover: #5a1e8f;
 
     /* Typography */
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
     /* Font Sizes */
@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
     --border-color: #dddddd;
   }
 
-  * {
+  *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -66,36 +66,16 @@ const GlobalStyle = createGlobalStyle`
   a:hover,
   a:focus {
     color: var(--color-link-hover);
-    text-decoration: underline;
   }
 
   h1, h2, h3, h4, h5, h6 {
+    line-height: var(--line-height-tight);
     margin-bottom: var(--space-md);
     font-weight: bold;
   }
 
   p {
     margin-bottom: var(--space-md);
-  }
-
-  ul, ol {
-    margin-bottom: var(--space-md);
-    padding-left: var(--space-lg);
-  }
-
-  li {
-    margin-bottom: var(--space-sm);
-  }
-
-  code, pre {
-    font-family: var(--font-mono);
-    background-color: var(--color-secondary);
-    padding: var(--space-xs) var(--space-sm);
-    border-radius: var(--border-radius);
-  }
-
-  pre {
-    overflow-x: auto;
   }
 
   img {
@@ -108,50 +88,6 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     border-top: 1px solid var(--border-color);
     margin: var(--space-lg) 0;
-  }
-
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 var(--space-md);
-  }
-
-  .header,
-  .footer {
-    padding: var(--space-lg) 0;
-    background-color: var(--color-primary);
-    color: #fff;
-  }
-
-  .header a,
-  .footer a {
-    color: #fff;
-  }
-
-  .main-content {
-    padding: var(--space-lg) 0;
-  }
-
-  .layout-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  .layout-footer {
-    margin-top: auto;
-    padding: 1rem;
-    text-align: center;
-    background-color: #f1f1f1;
-  }
-
-  .layout-footer a {
-    color: #007acc;
-    text-decoration: none;
-  }
-
-  .layout-footer a:hover {
-    text-decoration: underline;
   }
 `;
 

@@ -38,25 +38,38 @@ const NavLink = styled(Link)`
   &:focus {
     text-decoration: underline;
   }
+
+  &.active {
+    text-decoration: underline;
+    color: var(--color-link-hover);
+  }
 `;
 
-const Header = ({ siteTitle }) => (
-  <HeaderWrapper>
-    <Title>{siteTitle}</Title>
-    <Nav>
-      <NavList>
-        <NavItem>
-          <NavLink to="/">Home</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink to="/about">About</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink to="/contact">Contact</NavLink>
-        </NavItem>
-      </NavList>
-    </Nav>
-  </HeaderWrapper>
-);
+const Header = ({ siteTitle }) => {
+  return (
+    <HeaderWrapper>
+      <Title>{siteTitle}</Title>
+      <Nav aria-label="Main Navigation">
+        <NavList>
+          <NavItem>
+            <NavLink to="/" activeClassName="active">
+              Home
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/about" activeClassName="active">
+              About
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/contact" activeClassName="active">
+              Contact
+            </NavLink>
+          </NavItem>
+        </NavList>
+      </Nav>
+    </HeaderWrapper>
+  );
+};
 
 export default Header;
