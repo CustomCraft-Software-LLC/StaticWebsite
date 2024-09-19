@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { FaChevronDown, FaBars } from 'react-icons/fa';
 
-// Styled Header component using styled-components
+// Styled Header component
 const HeaderWrapper = styled.header`
   background: var(--color-primary);
   padding: 1rem 2rem;
@@ -22,24 +22,27 @@ const HeaderWrapper = styled.header`
   }
 `;
 
-const Title = styled.h1`
-  font-size: 1.8rem;
+const Title = styled(Link)`
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 1.5px;
   color: #fff;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
-  transition: color 0.3s ease-in-out;
+  text-decoration: none;
+  transition: color 0.3s ease;
 
   &:hover {
     color: var(--color-accent);
   }
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 `;
 
 const Nav = styled.nav`
+  display: flex;
+
   @media (max-width: 768px) {
     display: ${({ open }) => (open ? 'block' : 'none')};
     position: absolute;
@@ -48,18 +51,19 @@ const Nav = styled.nav`
     width: 100%;
     background: var(--color-primary);
     padding: 1rem 0;
+    z-index: 999;
   }
 `;
 
 const NavList = styled.ul`
-  list-style: none;
-  padding: 0;
   display: flex;
   gap: 2rem;
+  list-style: none;
+  margin: 0;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
   }
 `;
@@ -74,12 +78,10 @@ const NavLink = styled(Link)`
   font-weight: 500;
   text-decoration: none;
   letter-spacing: 0.5px;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease;
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: var(--color-accent);
-    transform: translateY(-2px);
   }
 
   &.active {
@@ -95,7 +97,7 @@ const Dropdown = styled.div`
   left: 0;
   background-color: var(--color-primary-dark);
   padding: 0.5rem 1rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 `;
 
@@ -113,7 +115,7 @@ const DropdownLink = styled(Link)`
 
 const ChevronIcon = styled(FaChevronDown)`
   margin-left: 5px;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   transition: transform 0.3s ease;
   ${({ open }) => open && `transform: rotate(180deg);`}
 `;
@@ -123,7 +125,7 @@ const Hamburger = styled(FaBars)`
   color: #fff;
   font-size: 1.5rem;
   cursor: pointer;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease;
 
   &:hover {
     color: var(--color-accent);
@@ -134,13 +136,6 @@ const Hamburger = styled(FaBars)`
   }
 `;
 
-const SocialContainer = styled.div`
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-`;
-
 // Header component with dropdown and responsive hamburger menu
 const Header = ({ siteTitle }) => {
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -148,13 +143,13 @@ const Header = ({ siteTitle }) => {
 
   return (
     <HeaderWrapper>
-      <Title>{siteTitle}</Title>
-      
+      <Title to="/">{siteTitle}</Title>
+
       {/* Hamburger Menu for Mobile */}
       <Hamburger onClick={() => setNavOpen(!navOpen)} />
 
       {/* Main Navigation */}
-      <Nav open={navOpen} aria-label="Main Navigation">
+      <Nav open={navOpen}>
         <NavList>
           <NavItem>
             <NavLink to="/" activeClassName="active">
@@ -164,29 +159,6 @@ const Header = ({ siteTitle }) => {
           <NavItem>
             <NavLink to="/about" activeClassName="active">
               About
-            </NavLink>
-          </NavItem>
-          <NavItem
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-          >
-            <NavLink as="button">
-              Services <ChevronIcon open={servicesOpen} />
-            </NavLink>
-            <Dropdown show={servicesOpen}>
-              <DropdownLink to="/services/web-development">Web Development</DropdownLink>
-              <DropdownLink to="/services/app-development">App Development</DropdownLink>
-              <DropdownLink to="/services/seo">SEO</DropdownLink>
-            </Dropdown>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/portfolio" activeClassName="active">
-              Portfolio
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/blog" activeClassName="active">
-              Blog
             </NavLink>
           </NavItem>
           <NavItem>
