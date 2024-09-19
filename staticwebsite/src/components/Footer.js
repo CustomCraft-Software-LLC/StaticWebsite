@@ -1,45 +1,111 @@
 import React from 'react';
-import styled from 'styled-components';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGithub } from 'react-icons/fa';
 
-const FooterWrapper = styled.footer`
-  background: var(--color-secondary);
-  padding: var(--space-lg) var(--space-xl);
-  text-align: center;
-  color: var(--color-text-light);
-  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
-  font-size: var(--font-size-small);
-`;
-
-const FooterText = styled.p`
-  margin: 0.5rem 0;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-`;
-
-const FooterLink = styled.a`
-  color: var(--color-link);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease, transform 0.3s ease;
-
-  &:hover,
-  &:focus {
-    color: var(--color-link-hover);
-    transform: translateY(-2px);
-  }
-`;
-
-const Footer = () => {
-  return (
-    <FooterWrapper>
-      <FooterText>© {new Date().getFullYear()} CustomCraft Software, LLC</FooterText>
-      <FooterText>
-        <FooterLink href="https://www.customcraftsoftware.com/" target="_blank" rel="noopener noreferrer">
-          CustomCraft Software, LLC
-        </FooterLink>
-      </FooterText>
-    </FooterWrapper>
-  );
+const footerStyles = {
+  backgroundColor: '#333',
+  color: '#fff',
+  padding: '40px 20px',
+  textAlign: 'center',
+  fontSize: '14px',
 };
+
+const containerStyles = {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  maxWidth: '1200px',
+  margin: '0 auto',
+  gap: '20px',
+};
+
+const sectionStyles = {
+  margin: '10px 0',
+};
+
+const listStyles = {
+  listStyle: 'none',
+  padding: 0,
+  margin: 0,
+  display: 'flex',
+  gap: '20px',
+};
+
+const linkStyles = {
+  color: '#fff',
+  textDecoration: 'none',
+  margin: '0 10px',
+  fontSize: '14px',
+  transition: 'color 0.3s ease',
+};
+
+const iconStyles = {
+  color: '#fff',
+  margin: '0 10px',
+  fontSize: '20px',
+  transition: 'color 0.3s ease',
+};
+
+const socialContainerStyles = {
+  display: 'flex',
+  justifyContent: 'center',
+  gap: '15px',
+};
+
+const Footer = () => (
+  <footer style={footerStyles}>
+    <div style={{ ...containerStyles, flexDirection: 'row' }}>
+      {/* Company Info Section */}
+      <div style={sectionStyles}>
+        <p>© {new Date().getFullYear()} CustomCraft Software, LLC</p>
+        <a
+          href="https://www.customcraftsoftware.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={linkStyles}
+        >
+          Visit Our Website
+        </a>
+      </div>
+
+      {/* Sitemap Section */}
+      <div style={sectionStyles}>
+        <ul style={listStyles}>
+          <li>
+            <a href="/about" style={linkStyles}>About Us</a>
+          </li>
+          <li>
+            <a href="/services" style={linkStyles}>Services</a>
+          </li>
+          <li>
+            <a href="/contact" style={linkStyles}>Contact</a>
+          </li>
+          <li>
+            <a href="/privacy" style={linkStyles}>Privacy Policy</a>
+          </li>
+          <li>
+            <a href="/terms" style={linkStyles}>Terms of Service</a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Social Media Section */}
+      <div style={socialContainerStyles}>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={iconStyles}>
+          <FaFacebookF />
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" style={iconStyles}>
+          <FaTwitter />
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style={iconStyles}>
+          <FaLinkedinIn />
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" style={iconStyles}>
+          <FaGithub />
+        </a>
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;
