@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { FaChevronDown, FaBars } from 'react-icons/fa';
+import { FaBars } from 'react-icons/fa';
+import { auth } from '../auth/firebaseAuth'; 
+import SignOut from '../components/SignOut'; 
 
-// Styled Header component
 const HeaderWrapper = styled.header`
   background: var(--color-primary);
   padding: 1rem 2rem;
@@ -90,36 +91,6 @@ const NavLink = styled(Link)`
   }
 `;
 
-const Dropdown = styled.div`
-  display: ${({ show }) => (show ? 'block' : 'none')};
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: var(--color-primary-dark);
-  padding: 0.5rem 1rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-`;
-
-const DropdownLink = styled(Link)`
-  display: block;
-  color: #fff;
-  padding: 0.5rem 0;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-
-  &:hover {
-    color: var(--color-accent);
-  }
-`;
-
-const ChevronIcon = styled(FaChevronDown)`
-  margin-left: 5px;
-  font-size: 0.8rem;
-  transition: transform 0.3s ease;
-  ${({ open }) => open && `transform: rotate(180deg);`}
-`;
-
 const Hamburger = styled(FaBars)`
   display: none;
   color: #fff;
@@ -136,10 +107,16 @@ const Hamburger = styled(FaBars)`
   }
 `;
 
-// Header component with dropdown and responsive hamburger menu
 const Header = ({ siteTitle }) => {
-  const [servicesOpen, setServicesOpen] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      setUser(authUser); 
+    });
+    return () => unsubscribe();
+  }, []);
 
   return (
     <HeaderWrapper>
@@ -151,6 +128,7 @@ const Header = ({ siteTitle }) => {
       {/* Main Navigation */}
       <Nav open={navOpen}>
         <NavList>
+          {/* Left Side */}
           <NavItem>
             <NavLink to="/" activeClassName="active">
               Home
@@ -166,6 +144,26 @@ const Header = ({ siteTitle }) => {
               Contact
             </NavLink>
           </NavItem>
+          
+          {/* Right Side */}
+          {user ? (
+            <NavItem>
+              <SignOut />
+            </NavItem>
+          ) : (
+            <>
+              <NavItem>
+                <NavLink to="/login" activeClassName="active">
+                  Login
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/signup" activeClassName="active">
+                  SignUp
+                </NavLink>
+              </NavItem>
+            </>
+          )}
         </NavList>
       </Nav>
     </HeaderWrapper>
