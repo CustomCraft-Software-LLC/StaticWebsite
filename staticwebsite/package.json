@@ -5,6 +5,8 @@
   "version": "1.0.0",
   "author": "Your Name <your.email@example.com>",
   "dependencies": {
+    "amazon-cognito-identity-js": "^6.3.12",
+    "aws-sdk": "^2.1691.0",
     "firebase": "^10.13.2",
     "gatsby": "^5.13.7",
     "gatsby-plugin-styled-components": "^6.13.1",
