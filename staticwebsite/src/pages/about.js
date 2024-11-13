@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 
-// Section styled component with alternate backgrounds
 const Section = styled.section`
   padding: 6rem 3rem;
   background-color: ${(props) => (props.alt ? "var(--color-light)" : "#fff")};
@@ -205,7 +204,6 @@ const About = () => (
   </Layout>
 );
 
-// SEO Component for the Head
 export const Head = () => (
   <Seo
     title="About"

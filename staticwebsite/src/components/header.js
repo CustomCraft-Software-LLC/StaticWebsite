@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { FaBars } from 'react-icons/fa';
 import { auth } from '../auth/firebaseAuth'; 
-import SignOut from '../components/SignOut';
+import SignOut from './SignOut';
 
 const HeaderWrapper = styled.header`
   background: var(--color-primary);

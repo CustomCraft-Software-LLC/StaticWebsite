@@ -4,7 +4,6 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 
-// Styled components for a modern homepage
 const HeroSection = styled.header`
   display: flex;
   flex-direction: column;

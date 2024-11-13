@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 
-// Styled components
 const Section = styled.section`
   padding: 4rem 2rem;
   background-color: ${(props) => (props.alt ? "var(--color-light)" : "#fff")};
