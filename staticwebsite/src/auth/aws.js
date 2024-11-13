@@ -1,6 +1,5 @@
 import { CognitoUserPool, CognitoUser, AuthenticationDetails } from 'amazon-cognito-identity-js';
 
-// Configuration for the Cognito User Pool
 const userPool = new CognitoUserPool({
     UserPoolId: process.env.GATSBY_AWS_COGNITO_USER_POOL_ID,
     ClientId: process.env.GATSBY_AWS_COGNITO_CLIENT_ID,

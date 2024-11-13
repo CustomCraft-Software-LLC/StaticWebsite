@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { FaBars } from 'react-icons/fa';
 import { auth } from '../auth/firebaseAuth'; 
-import SignOut from '../components/SignOut'; 
+import SignOut from '../components/SignOut';
 
 const HeaderWrapper = styled.header`
   background: var(--color-primary);
@@ -69,9 +69,7 @@ const NavList = styled.ul`
   }
 `;
 
-const NavItem = styled.li`
-  position: relative;
-`;
+const NavItem = styled.li``;
 
 const NavLink = styled(Link)`
   color: #fff;
@@ -112,10 +110,8 @@ const Header = ({ siteTitle }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((authUser) => {
-      setUser(authUser); 
-    });
-    return () => unsubscribe();
+    const unsubscribe = auth.onAuthStateChanged(setUser);
+    return unsubscribe;
   }, []);
 
   return (
@@ -123,12 +119,11 @@ const Header = ({ siteTitle }) => {
       <Title to="/">{siteTitle}</Title>
 
       {/* Hamburger Menu for Mobile */}
-      <Hamburger onClick={() => setNavOpen(!navOpen)} />
+      <Hamburger onClick={() => setNavOpen(prev => !prev)} />
 
       {/* Main Navigation */}
       <Nav open={navOpen}>
         <NavList>
-          {/* Left Side */}
           <NavItem>
             <NavLink to="/" activeClassName="active">
               Home
@@ -144,7 +139,7 @@ const Header = ({ siteTitle }) => {
               Contact
             </NavLink>
           </NavItem>
-          
+
           {/* Right Side */}
           {user ? (
             <NavItem>

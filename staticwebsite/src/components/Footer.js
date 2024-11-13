@@ -55,7 +55,6 @@ const socialContainerStyles = {
 const Footer = () => (
   <footer style={footerStyles}>
     <div style={{ ...containerStyles, flexDirection: 'row' }}>
-      {/* Company Info Section */}
       <div style={sectionStyles}>
         <p>© {new Date().getFullYear()} CustomCraft Software, LLC</p>
         <a
@@ -68,7 +67,6 @@ const Footer = () => (
         </a>
       </div>
 
-      {/* Sitemap Section */}
       <div style={sectionStyles}>
         <ul style={listStyles}>
           <li>
@@ -89,7 +87,6 @@ const Footer = () => (
         </ul>
       </div>
 
-      {/* Social Media Section */}
       <div style={socialContainerStyles}>
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={iconStyles}>
           <FaFacebookF />
