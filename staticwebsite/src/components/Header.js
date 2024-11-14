@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { FaBars } from 'react-icons/fa';
-import { auth } from '../auth/firebaseAuth'; 
+import { auth } from '../auth/firebaseAuth';
 import SignOut from './SignOut';
 
 const HeaderWrapper = styled.header`
@@ -15,9 +15,7 @@ const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background 0.3s ease-in-out;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
   @media (max-width: 768px) {
     padding: 0.75rem 1rem;
   }
@@ -27,15 +25,11 @@ const Title = styled(Link)`
   font-size: 2rem;
   font-weight: 700;
   color: #fff;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
   text-decoration: none;
   transition: color 0.3s ease;
-
   &:hover {
     color: var(--color-accent);
   }
-
   @media (max-width: 768px) {
     font-size: 1.7rem;
   }
@@ -43,7 +37,6 @@ const Title = styled(Link)`
 
 const Nav = styled.nav`
   display: flex;
-
   @media (max-width: 768px) {
     display: ${({ open }) => (open ? 'block' : 'none')};
     position: absolute;
@@ -52,16 +45,12 @@ const Nav = styled.nav`
     width: 100%;
     background: var(--color-primary);
     padding: 1rem 0;
-    z-index: 999;
   }
 `;
 
 const NavList = styled.ul`
   display: flex;
   gap: 2rem;
-  list-style: none;
-  margin: 0;
-
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 1.5rem;
@@ -69,20 +58,15 @@ const NavList = styled.ul`
   }
 `;
 
-const NavItem = styled.li``;
-
 const NavLink = styled(Link)`
   color: #fff;
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
-  letter-spacing: 0.5px;
   transition: color 0.3s ease;
-
   &:hover {
     color: var(--color-accent);
   }
-
   &.active {
     color: var(--color-accent);
     text-decoration: underline;
@@ -94,12 +78,9 @@ const Hamburger = styled(FaBars)`
   color: #fff;
   font-size: 1.5rem;
   cursor: pointer;
-  transition: color 0.3s ease;
-
   &:hover {
     color: var(--color-accent);
   }
-
   @media (max-width: 768px) {
     display: block;
   }
@@ -117,46 +98,18 @@ const Header = ({ siteTitle }) => {
   return (
     <HeaderWrapper>
       <Title to="/">{siteTitle}</Title>
-
-      {/* Hamburger Menu for Mobile */}
       <Hamburger onClick={() => setNavOpen(prev => !prev)} />
-
-      {/* Main Navigation */}
       <Nav open={navOpen}>
         <NavList>
-          <NavItem>
-            <NavLink to="/" activeClassName="active">
-              Home
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/about" activeClassName="active">
-              About
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/contact" activeClassName="active">
-              Contact
-            </NavLink>
-          </NavItem>
-
-          {/* Right Side */}
+          <li><NavLink to="/" activeClassName="active">Home</NavLink></li>
+          <li><NavLink to="/about" activeClassName="active">About</NavLink></li>
+          <li><NavLink to="/contact" activeClassName="active">Contact</NavLink></li>
           {user ? (
-            <NavItem>
-              <SignOut />
-            </NavItem>
+            <li><SignOut /></li>
           ) : (
             <>
-              <NavItem>
-                <NavLink to="/login" activeClassName="active">
-                  Login
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/signup" activeClassName="active">
-                  SignUp
-                </NavLink>
-              </NavItem>
+              <li><NavLink to="/login" activeClassName="active">Login</NavLink></li>
+              <li><NavLink to="/signup" activeClassName="active">SignUp</NavLink></li>
             </>
           )}
         </NavList>
