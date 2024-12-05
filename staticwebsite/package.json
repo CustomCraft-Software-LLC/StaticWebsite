@@ -2,7 +2,7 @@
   "name": "websitename",
   "private": true,
   "description": "Boilerplate gatsby in react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Your Name <your.email@example.com>",
   "dependencies": {
     "amazon-cognito-identity-js": "^6.3.12",
