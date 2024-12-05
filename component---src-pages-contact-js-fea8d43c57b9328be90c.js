@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkwebsitename=self.webpackChunkwebsitename||[]).push([[501],{5791:function(e,t,n){n.r(t),n.d(t,{Head:function(){return c}});var a=n(7294),l=n(4296),u=n(1755);const c=()=>a.createElement(u.Z,{title:"Contact"});t.default=()=>a.createElement(l.Z,null,a.createElement("h1",null,"Contact Us"),a.createElement("p",null,"If you have any questions, feel free to reach out."))}}]);
+//# sourceMappingURL=component---src-pages-contact-js-fea8d43c57b9328be90c.js.map

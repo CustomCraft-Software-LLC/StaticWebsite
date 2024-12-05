@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkwebsitename=self.webpackChunkwebsitename||[]).push([[682],{5465:function(e,t,n){n.r(t),n.d(t,{Head:function(){return l}});var a=n(7294),i=n(4296),r=n(1755);const l=()=>a.createElement(r.Z,{title:"About",description:"Learn more about this traditional yet modern static website."});t.default=()=>a.createElement(i.Z,null,a.createElement("h1",null,"About Us"),a.createElement("p",null,"Learn more about this traditional yet modern static website."))}}]);
+//# sourceMappingURL=component---src-pages-about-js-18a6db5a0b7754d5509b.js.map
