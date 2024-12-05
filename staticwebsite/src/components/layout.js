@@ -15,4 +15,6 @@ const Layout = ({ children }) => {
   );
 }
 
+const Route = '/StaticWebsite';
+
 export default Layout;

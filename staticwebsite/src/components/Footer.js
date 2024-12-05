@@ -52,46 +52,50 @@ const socialContainerStyles = {
   gap: '15px',
 };
 
-const Footer = () => (
-  <footer style={footerStyles}>
-    <div style={{ ...containerStyles, flexDirection: 'row' }}>
-      <div style={sectionStyles}>
-        <ul style={listStyles}>
-          <li>
-            <a href="/about" style={linkStyles}>About Us</a>
-          </li>
-          <li>
-            <a href="/contact" style={linkStyles}>Contact</a>
-          </li>
-          <li>
-            <a href="/privacy" style={linkStyles}>Privacy Policy</a>
-          </li>
-          <li>
-            <a href="/terms" style={linkStyles}>Terms of Service</a>
-          </li>
-        </ul>
-      </div>
+const Route = '/StaticWebsite';
 
-      <div style={socialContainerStyles}>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={iconStyles}>
-          <FaFacebookF />
-        </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" style={iconStyles}>
-          <FaTwitter />
-        </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style={iconStyles}>
-          <FaLinkedinIn />
-        </a>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" style={iconStyles}>
-          <FaGithub />
-        </a>
-      </div>
+const Footer = () => {
+  return (  
+    <footer style={footerStyles}>
+      <div style={{ ...containerStyles, flexDirection: 'row' }}>
+        <div style={sectionStyles}>
+          <ul style={listStyles}>
+            <li>
+              <a href={`${Route}/about`} style={linkStyles}>About Us</a>
+            </li>
+            <li>
+              <a href={`${Route}/contact`} style={linkStyles}>Contact</a>
+            </li>
+            <li>
+              <a href={`${Route}/privacy`} style={linkStyles}>Privacy Policy</a>
+            </li>
+            <li>
+              <a href={`${Route}/terms`} style={linkStyles}>Terms of Service</a>
+            </li>
+          </ul>
+        </div>
 
-      <div>
-        <p>© {new Date().getFullYear()} </p>
+        <div style={socialContainerStyles}>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={iconStyles}>
+            <FaFacebookF />
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" style={iconStyles}>
+            <FaTwitter />
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style={iconStyles}>
+            <FaLinkedinIn />
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" style={iconStyles}>
+            <FaGithub />
+          </a>
+        </div>
+
+        <div>
+          <p>© {new Date().getFullYear()} </p>
+        </div>
       </div>
-    </div>
-  </footer>
-);
+    </footer>
+  );
+}
 
 export default Footer;

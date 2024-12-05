@@ -41,6 +41,8 @@ const ButtonLink = styled(Link)`
   }
 `;
 
+const Route = '/StaticWebsite'
+
 const Index = () => {
   return ( 
     <Layout>
@@ -48,8 +50,8 @@ const Index = () => {
         <h1>Welcome to Our Website</h1>
         <p>Explore more about us or get in touch with our team.</p>
         <ButtonGroup>
-          <ButtonLink to="/about">About Us</ButtonLink>
-          <ButtonLink to="/contact">Contact Us</ButtonLink>
+          <ButtonLink to={`${Route}/about`}>About Us</ButtonLink>
+          <ButtonLink to={`${Route}/contact`}>Contact Us</ButtonLink>
         </ButtonGroup>
       </HeroSection>
     </Layout>

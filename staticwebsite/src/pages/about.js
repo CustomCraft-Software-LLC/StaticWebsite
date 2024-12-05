@@ -90,6 +90,8 @@ const team = [
   { name: "Sara Lee", role: "Product Designer", img: "https://ui-avatars.com/api/?name=Sara+Lee&background=random" },
 ];
 
+const Route = '/StaticWebsite';
+
 const About = () => {
   return (
     <Layout>
@@ -145,7 +147,7 @@ const About = () => {
 
       <CallToAction>
         <h2>Ready to Work With Us?</h2>
-        <ButtonLink to="/contact">Get In Touch</ButtonLink>
+        <ButtonLink to={`/contact`}>Get In Touch</ButtonLink>
       </CallToAction>
     </Layout>
   );

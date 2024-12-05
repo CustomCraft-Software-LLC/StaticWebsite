@@ -88,6 +88,8 @@ const NavLink = styled(Link)`
   }
 `;
 
+const Route = '/StaticWebsite';
+
 const Header = ({ siteTitle }) => {
   const [navOpen, setNavOpen] = useState(false);
   const [user, setUser] = useState(null);
@@ -99,17 +101,17 @@ const Header = ({ siteTitle }) => {
 
   return (
     <HeaderWrapper>
-      <Title to="/">{siteTitle}</Title>
+      <Title to={`/`}>{siteTitle}</Title>
       <Hamburger onClick={() => setNavOpen((prev) => !prev)} />
       <Nav open={navOpen}>
         <NavList>
-            <NavLink to="/" activeClassName="active">
+            <NavLink to={`${Route}/`} activeClassName="active">
               Home
             </NavLink>
-            <NavLink to="/about" activeClassName="active">
+            <NavLink to={`${Route}/about`} activeClassName="active">
               About
             </NavLink>
-            <NavLink to="/contact" activeClassName="active">
+            <NavLink to={`${Route}/contact`} activeClassName="active">
               Contact
             </NavLink>
         </NavList>
