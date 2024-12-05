@@ -27,13 +27,8 @@ const Title = styled(Link)`
   color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
-
   &:hover {
     color: var(--color-accent);
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
   }
 `;
 
@@ -42,11 +37,9 @@ const Hamburger = styled(FaBars)`
   color: #fff;
   font-size: 1.8rem;
   cursor: pointer;
-
   &:hover {
     color: var(--color-accent);
   }
-
   @media (max-width: 768px) {
     display: block;
   }

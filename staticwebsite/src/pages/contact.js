@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
+import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import Seo from "../components/Seo";
 
 const Section = styled.section`
@@ -87,6 +88,18 @@ const SocialContainer = styled.div`
   }
 `;
 
+const Button = styled.button`
+  background-color: #333;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 4px;
+  &:hover {
+    background-color: #111;
+    color: #fff;
+  }
+`;
+
 const Contact = () => { 
   return ( 
     <Layout>
@@ -103,7 +116,7 @@ const Contact = () => {
             <input type="text" name="name" placeholder="Your Name" required />
             <input type="email" name="email" placeholder="Your Email" required />
             <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+            <Button type="submit">Send Message</Button>
           </ContactForm>
 
           <ContactInfo>
@@ -124,21 +137,20 @@ const Contact = () => {
           <MapContainer>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9111076354466!2d-74.00601508506749!3d40.71277537933044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a3165bfbc23%3A0x49c49b5c6bcdf235!2s123%20Main%20St%2C%20New%20York%2C%20NY%2010001!5e0!3m2!1sen!2sus!4v1634849583714!5m2!1sen!2sus"
-              allowFullScreen=""
               loading="lazy"
               title="Our Office Location"
             />
           </MapContainer>
 
           <SocialContainer>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <img src="/icons/facebook.svg" alt="Facebook" />
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FaFacebookF />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <img src="/icons/twitter.svg" alt="Twitter" />
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <FaTwitter />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <img src="/icons/linkedin.svg" alt="LinkedIn" />
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedinIn />
             </a>
           </SocialContainer>
         </SectionContent>

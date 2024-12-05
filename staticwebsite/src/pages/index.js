@@ -1,4 +1,4 @@
-import * as React from "react";
+import  React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
@@ -10,9 +10,7 @@ const HeroSection = styled.header`
   align-items: center;
   text-align: center;
   padding: 80px 20px;
-  background-color: #333;
-  color: #fff;
-  min-height: 70vh;
+  min-height: 80vh;
   h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -28,21 +26,18 @@ const ButtonGroup = styled.div`
   display: flex;
   gap: 15px;
   justify-content: center;
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 10px;
-  }
 `;
 
 const ButtonLink = styled(Link)`
-  background-color: #007acc;
+  background-color: #333;
   color: #fff;
   padding: 8px 16px;
   font-size: 1rem;
   border-radius: 4px;
   text-decoration: none;
   &:hover {
-    background-color: #005f99;
+    background-color: #111;
+    color: #fff;
   }
 `;
 

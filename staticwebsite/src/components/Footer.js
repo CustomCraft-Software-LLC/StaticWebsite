@@ -56,18 +56,6 @@ const Footer = () => (
   <footer style={footerStyles}>
     <div style={{ ...containerStyles, flexDirection: 'row' }}>
       <div style={sectionStyles}>
-        <p>© {new Date().getFullYear()} CustomCraft Software, LLC</p>
-        <a
-          href="https://www.customcraftsoftware.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={linkStyles}
-        >
-          Visit Our Website
-        </a>
-      </div>
-
-      <div style={sectionStyles}>
         <ul style={listStyles}>
           <li>
             <a href="/about" style={linkStyles}>About Us</a>
@@ -97,6 +85,10 @@ const Footer = () => (
         <a href="https://github.com" target="_blank" rel="noopener noreferrer" style={iconStyles}>
           <FaGithub />
         </a>
+      </div>
+
+      <div>
+        <p>© {new Date().getFullYear()} </p>
       </div>
     </div>
   </footer>

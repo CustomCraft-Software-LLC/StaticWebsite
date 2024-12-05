@@ -1,12 +1,10 @@
-import * as React from "react";
-import { Link } from "gatsby";
+import React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 
 const PrivacySection = styled.section`
   padding: 40px 20px;
-  background-color: #f9f9f9;
   text-align: left;
   max-width: 800px;
   margin: 0 auto;
@@ -22,25 +20,12 @@ const PrivacyContent = styled.div`
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 20px;
-
   p {
     margin-bottom: 20px;
   }
-
   ul {
     list-style-type: disc;
     padding-left: 20px;
-  }
-`;
-
-const BackLink = styled(Link)`
-  display: inline-block;
-  margin-top: 20px;
-  font-size: 1.1rem;
-  color: #007acc;
-  text-decoration: none;
-  &:hover {
-    color: #005f99;
   }
 `;
 
@@ -88,8 +73,6 @@ const Privacy = () => {
 
           <h2>Contact Us</h2>
           <p>If you have any questions or concerns about this Privacy Policy, please contact us at [Your Contact Information].</p>
-
-          <BackLink to="/">Back to Home</BackLink>
         </PrivacyContent>
       </PrivacySection>
     </Layout>

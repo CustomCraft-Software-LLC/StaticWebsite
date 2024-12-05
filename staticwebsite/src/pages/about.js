@@ -1,15 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
+import { Link } from "gatsby";
 import Seo from "../components/Seo";
 
 const Section = styled.section`
   padding: 4rem 2rem;
   text-align: center;
-  background-color: ${(props) => (props.alt ? "#f9f9f9" : "#fff")};
-  @media (max-width: 768px) {
-    padding: 3rem 1.5rem;
-  }
 `;
 
 const SectionTitle = styled.h2`
@@ -28,7 +25,6 @@ const SectionContent = styled.div`
     list-style: none;
     padding: 0;
     font-weight: 500;
-
     li {
       margin-bottom: 1rem;
     }
@@ -43,13 +39,26 @@ const TeamContainer = styled.div`
   margin-top: 2rem;
 `;
 
+const ButtonLink = styled(Link)`
+  background-color: #333;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  &:hover {
+    background-color: #111;
+    color: #fff;
+  }
+`;
+
 const TeamMember = styled.div`
   text-align: center;
   max-width: 200px;
   img {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 75 px;
+    height: 75px;
   }
   h3 {
     margin-top: 1rem;
@@ -63,24 +72,15 @@ const TeamMember = styled.div`
 
 const CallToAction = styled.div`
   padding: 3rem 2rem;
-  background-color: #333;
-  color: #fff;
   text-align: center;
   margin-top: 4rem;
   h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
   }
-  a {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #fff;
-    color: #333;
+  button {
     text-decoration: none;
-    border-radius: 5px;
-    &:hover {
-      background-color: #f0f0f0;
-    }
+    color: #333;
   }
 `;
 
@@ -145,7 +145,7 @@ const About = () => {
 
       <CallToAction>
         <h2>Ready to Work With Us?</h2>
-        <a href="/contact">Get In Touch</a>
+        <ButtonLink to="/contact">Get In Touch</ButtonLink>
       </CallToAction>
     </Layout>
   );
