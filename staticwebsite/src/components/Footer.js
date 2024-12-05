@@ -73,9 +73,6 @@ const Footer = () => (
             <a href="/about" style={linkStyles}>About Us</a>
           </li>
           <li>
-            <a href="/services" style={linkStyles}>Services</a>
-          </li>
-          <li>
             <a href="/contact" style={linkStyles}>Contact</a>
           </li>
           <li>

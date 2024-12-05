@@ -46,18 +46,20 @@ const ButtonLink = styled(Link)`
   }
 `;
 
-const Index = () => (
-  <Layout>
-    <HeroSection>
-      <h1>Welcome to Our Website</h1>
-      <p>Explore more about us or get in touch with our team.</p>
-      <ButtonGroup>
-        <ButtonLink to="/about">About Us</ButtonLink>
-        <ButtonLink to="/contact">Contact Us</ButtonLink>
-      </ButtonGroup>
-    </HeroSection>
-  </Layout>
-);
+const Index = () => {
+  return ( 
+    <Layout>
+      <HeroSection>
+        <h1>Welcome to Our Website</h1>
+        <p>Explore more about us or get in touch with our team.</p>
+        <ButtonGroup>
+          <ButtonLink to="/about">About Us</ButtonLink>
+          <ButtonLink to="/contact">Contact Us</ButtonLink>
+        </ButtonGroup>
+      </HeroSection>
+    </Layout>
+  );
+}
 
 export const Head = () => (
   <Seo

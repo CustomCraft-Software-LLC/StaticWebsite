@@ -18,15 +18,24 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
-  html {
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     font-size: var(--font-size-base);
     font-family: var(--font-sans);
     color: var(--color-text);
     background-color: var(--color-background);
   }
 
-  body {
-    margin: 0;
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex: 1; /* This allows the main content to grow and push footer down */
   }
 
   a {
