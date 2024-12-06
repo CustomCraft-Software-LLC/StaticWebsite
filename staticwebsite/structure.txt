@@ -1,0 +1,36 @@
+.
+├── gatsby-browser.js
+├── gatsby-config.js
+├── gatsby-node.js
+├── gatsby-ssr.js
+├── LICENSE
+├── package.json
+├── package-lock.json
+├── README.md
+├── src
+│   ├── auth
+│   │   ├── aws.js
+│   │   ├── firebaseAuth.js
+│   │   └── firebase.js
+│   ├── components
+│   │   ├── Footer.js
+│   │   ├── Header.js
+│   │   ├── Layout.js
+│   │   ├── Seo.js
+│   │   └── SignOut.js
+│   ├── images
+│   ├── pages
+│   │   ├── 404.js
+│   │   ├── about.js
+│   │   ├── contact.js
+│   │   ├── index.js
+│   │   ├── Login.js
+│   │   ├── privacy.js
+│   │   ├── SignUp.js
+│   │   └── terms.js
+│   ├── styles
+│   │   └── GlobalStyle.js
+│   └── templates
+└── structure.txt
+
+7 directories, 26 files
