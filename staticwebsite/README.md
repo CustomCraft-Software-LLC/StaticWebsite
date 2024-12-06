@@ -1,6 +1,6 @@
-# Small Business Website
+# Small Business Website or Portfolio Website
 
-### This project is a web application designed for a small business. The website provides key functionalities to showcase the business, engage customers, and manage user interactions. It includes features like user authentication, essential information pages, and a responsive layout for a seamless experience across devices.
+### This project is a web application designed for a small business or portfolio. The website provides key functionalities to showcase the business, engage customers, and manage user interactions. It includes features like user authentication, essential information pages, and a responsive layout for a seamless experience across devices.
 
 ## Purpose of the Website
 
